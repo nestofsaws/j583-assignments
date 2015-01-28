@@ -15,6 +15,7 @@ def convert_weight (x):
 	
 status = 'Legend'
 bowling_status = 'Trash'
+expo = 5**18
 
 print "Our bowler's name is", bowler
 print "Normally, his bowling average is", average, ", but tonight it was", newavg, "."
@@ -24,3 +25,4 @@ print "Did I mention that %s is a %s?" % (bowler, status)
 print "He lost over %d kilograms!" % kilos
 print "thats about", convert_weight(70), "pounds!!"
 print "he may be a %s, but his bowling is still %s." % (status, bowling_status)
+print "five to the eighteenth power is %d" % expo
