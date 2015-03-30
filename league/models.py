@@ -19,16 +19,15 @@ class Team(models.Model):
     mascot = models.CharField(unique=False, max_length=50, null=True)
     coach = models.CharField(max_length=50)
     description = models.CharField(max_length = 200, default='')
-    #term = models.CharField(max_length = 50)
     players = models.ManyToManyField('Player')
-    #date = models.DateField(default = timezone.now)
 
     class Meta(object):
         verbose_name_plural = 'Teams'
         ordering = ('name', 'mascot')
 
     def __unicode__(self):
-        return u'%s | %s' % (self.name, self.mascot)
+        return u'%s %s' % (self.name, self.mascot)
+          
 
     def save(self, *args, **kwargs):
         self.name = self.name.upper()

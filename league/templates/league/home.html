@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 {% load humanize %}
 	{% block content %}
-        <h1>Teams and Players</h1>
-        <p>This league has {{ player_count|intcomma }} players and {{ team_count|intcomma }} teams!!!</p>
-	<a href="{% url 'league_team' 1 %}">Team</a>
-	<a href="{% url 'league_team_list' %}">Teams List</a>
-	<a href="{% url 'league_player' 1 %}">Player</a>  
-	<a href="{% url 'league_player_list' %}">Players List</a>        
-      
-{% endblock %}
+		<div class="jumbotron">
+		<h1 class="text-center">USAFL</h1>
+			<p class="text-center">The United States Australian Football League has {{ player_count|intcomma }} players and {{ team_count|intcomma }} teams</p>
+		</div> <!-- end jumbotron -->  
+		<div class="row">
+			<div class="col-xs-12">
+			<div class="panel panel-warning">
+				<div class='panel-heading'><h3>Teams List</h3></div>
+				<div class='panel-body'><a href="{% url 'league_team_list' %}">Teams</a></div>
+				<div class='panel-heading'><h3>Players List</h3></div>
+				<div class='panel-body'><a href="{% url 'league_player_list' %}">Players</a></div>
+			</div> <!-- end panel -->
+			</div> <!-- end column -->
+		</div> <!-- end row -->	
+	{% endblock %}

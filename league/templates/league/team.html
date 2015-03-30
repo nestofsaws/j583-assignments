@@ -2,13 +2,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2> {{ team.name }} | {{ team.mascot }}</h2>
-    <h4>Coach: {{ team.coach }}</h4>
-    <p> {{ team.description }}</p>
-    <ul>
-        {% for player in players %}
-            <li><a href="{{ player.id }}">{{ player.name }}</a> | {{ player.number }}</li>
-        {% endfor %}
-    </ul>
-    
+	<div class="jumbotron">
+		<h1 class="text-center">{{ team.name }} {{ team.mascot }}</h1>
+	</div> <!-- end jumbotron -->  
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-warning">
+				<div class='panel-heading'><h3>{{ team.mascot }} Info</h3></div>
+				<div class='panel-body'>
+					<div class="panel panel-warning">
+						<div class='panel-heading'>Description:</div>
+						<div class='panel-body'>{{ team.description }}</div>
+						<div class='panel-heading'>Coach</div>
+						<div class='panel-body'>{{ team.coach }}</div>
+						<div class='panel-heading'>Players</div>
+						<div class='panel-body'>
+						 <table class="table table-bordered table-striped table-hover">
+						  	<thead>
+							<tr>
+							  <th>Number</th><th>Name</th><th>Position</th>
+		    				</tr>	
+		  					</thead>
+		  					<tbody>	
+				  		
+								{% for player in team.players.all %}
+									<tr><td><a href="/player/{{ player.id }}">#{{ player.number }}</td><td> {{ player.name }}</td></a><td> {{ player.position }} </td></tr>
+								{% endfor %}
+							</tbody>
+						</table>
+						</div>	
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>			
+			    
 {% endblock content %}
