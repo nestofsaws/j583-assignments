@@ -1,0 +1,8 @@
+{# in league/templates/league/team.html #}
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2> {{ team.name }} | {{ team.mascot }}</h2>
+    <h4>Coach: {{ team.coach }}</h4>
+    <p> {{ team.description }}</p>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load humanize %}
+	{% block content %}
+        <h1>Teams and Players</h1>
+        <p>This league has {{ player_count|intcomma }} players and {{ team_count|intcomma }} teams!!!</p>
+	<a href="{% url 'league_team' 1 %}">Team</a>
+	<a href="{% url 'league_team_list' %}">Teams List</a>
+	<a href="{% url 'league_player' 1 %}">Player</a>  
+	<a href="{% url 'league_player_list' %}">Players List</a>        
+      
+{% endblock %}

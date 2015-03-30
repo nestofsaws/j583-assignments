@@ -1,0 +1,11 @@
+{# league/player_list.html #}
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>All Players</h2>
+    <ul>
+        {% for player in players %}
+            <li><a href="{{ player.id }}">{{ player.name }}</a> | {{ player.id }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
