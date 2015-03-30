@@ -5,4 +5,10 @@
     <h2> {{ team.name }} | {{ team.mascot }}</h2>
     <h4>Coach: {{ team.coach }}</h4>
     <p> {{ team.description }}</p>
+    <ul>
+        {% for player in players %}
+            <li><a href="{{ player.id }}">{{ player.name }}</a> | {{ player.number }}</li>
+        {% endfor %}
+    </ul>
+    
 {% endblock content %}
