@@ -3,15 +3,14 @@
 
 {% block content %}
 
-    
-    
    	<div class="row">
 		<div class="col-xs-12">
 			<div class="panel panel-warning">
-				<div class='panel-heading'><h3>All Players</h3></div>
+				<div class='panel-heading'><h2>All Players</h2></div>
 				<div class='panel-body'>
 					{% for player in players %}
-						<a href="{{ player.id }}">#{{  player.number }} | {{ player.name }}</a><br>
+					<a href="{{ player.id }}" class="btn btn-warning btn-lg">
+          			<span class="glyphicon glyphicon-user"></span> #{{  player.number }} | {{ player.name }}</a><br><br>
 					{% endfor %}
 				</div> <!-- end panel body -->	
         	</div> <!-- end panel -->

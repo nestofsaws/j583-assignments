@@ -7,6 +7,11 @@ class Player (models.Model):
     playerid = models.CharField(unique = True, max_length=12)
     number = models.IntegerField(max_length=3, null=True)
     position = models.CharField(unique=False, max_length=50, null=True)
+    games_played = models.IntegerField(max_length=3, null=True)
+    goals = models.IntegerField(max_length=3, null=True)
+    height = models.IntegerField(max_length=3, null=True)
+    weight = models.IntegerField(max_length=3, null=True)
+
 
     class Meta(object):
         ordering = ('number', 'name')

@@ -10,7 +10,18 @@
 				<div class='panel-heading'><img src="{% static "" %}{{ player.name }}.png" alt="{{ player.name }}" class='img-thumbnail img-responsive pull-left' width='200'><h3>&nbsp;&nbsp;#{{ player.number }} | {{ player.name }} : Player Info</h3></div>
 				<div class='panel-body'>
 				&nbsp;&nbsp;{{ player.name }} has guernsey number {{ player.number }} and he is a {{ player.position }}.
-
+				
+				<table class="table table-bordered table-striped table-hover">
+						  	<thead>
+							<tr>
+							  <th>Number</th><th>Name</th><th>Position</th><th>Games Played</th><th>Goals</th><th>Height</th><th>Weight</th>
+		    				</tr>	
+		  					</thead>
+		  					<tbody>	
+								<tr><td>#{{ player.number }}</td><td> {{ player.name }}</td><td> {{ player.position }} </td><td> {{ player.games_played }} </td><td> {{ player.goals }} </td><td> {{ player.height }}cm </td><td> {{ player.weight }}kg </td></tr>
+							</tbody>
+						</table>
+				
 				</div> <!-- end panel body -->	
         	</div> <!-- end panel -->
         	<img src="{% static "positions.jpg" %}" width="600" class="img-responsive center-block" alt="positions">
