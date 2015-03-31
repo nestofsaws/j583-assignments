@@ -1,6 +1,19 @@
 {# in league/templates/league/player.html #}
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-    <p> {{ player.playerid }} | {{ player.name }} has guernsey number {{ player.number }} and he is a {{ player.position }}.</p>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-warning">
+				<div class='panel-heading'><img src="{% static "" %}{{ player.name }}.png" alt="{{ player.name }}" class='img-thumbnail img-responsive pull-left' width='200'><h3>&nbsp;&nbsp;#{{ player.number }} | {{ player.name }} : Player Info</h3></div>
+				<div class='panel-body'>
+				&nbsp;&nbsp;{{ player.name }} has guernsey number {{ player.number }} and he is a {{ player.position }}.
+
+				</div> <!-- end panel body -->	
+        	</div> <!-- end panel -->
+        	<img src="{% static "positions.jpg" %}" width="600" class="img-responsive center-block" alt="positions">
+		</div> <!-- end column -->
+	</div> <!-- end row -->	
 {% endblock content %}

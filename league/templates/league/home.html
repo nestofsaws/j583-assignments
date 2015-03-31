@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% load staticfiles %}
+
 	{% block content %}
 		<div class="jumbotron">
-		<h1 class="text-center">USAFL</h1>
-			<p class="text-center">The United States Australian Football League has {{ player_count|intcomma }} players and {{ team_count|intcomma }} teams</p>
+			<img src="{% static "usafl.png" %}" alt="usafl" width="500" class="img-responsive center-block">
+			<div class="caption text-center">
+         		<h2>United States Australian Football League</h2>
+         	</div>	
+			<p class="text-center">The USAFL has {{ player_count|intcomma }} players and {{ team_count|intcomma }} teams</p>
 		</div> <!-- end jumbotron -->  
 		<div class="row">
 			<div class="col-xs-12">
